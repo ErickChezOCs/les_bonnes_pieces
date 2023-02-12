@@ -17,7 +17,7 @@ categorieElement.innerText = article.categorie;
 const descriptionElement =  document.createElement('p');
 descriptionElement.innerText = article.description ?? 'Pas de description pour le moment.';
 const disponibiliteElement =  document.createElement('p');
-disponibiliteElement.innerText = article.disponible===true? 'En stock.' :"Rupture de stock";
+disponibiliteElement.innerText = article.disponibilité===true? 'En stock.' :"Rupture de stock";
 
 // sélection de l'élément parent
 const articleElement = document.createElement("article");
