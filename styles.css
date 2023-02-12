@@ -45,6 +45,7 @@ main {
 .fiches {
 	flex: 1;
 	margin: 8px;
+	
 }
 .fiches img {
 	max-width: 200px;
@@ -52,4 +53,12 @@ main {
 .fiches p {
 	margin-top: 4px;
 	margin-bottom: 4px;
+}
+ 
+.article {
+	border:2px solid red;
+	max-width: 600px;
+	text-align: center;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
 }

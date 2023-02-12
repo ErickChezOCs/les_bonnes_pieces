@@ -39,6 +39,7 @@
         "id": 5,
         "nom": "Balai d'essuie-glace",
         "prix": 29.10,
+        "categorie":"Habitacle",
         "description":"Performances d'essuyage au top! Longueur:550 mm",
         "image":"images/balai-essuie-glace.png",
         "disponibilité": true
