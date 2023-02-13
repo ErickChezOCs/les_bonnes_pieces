@@ -39,3 +39,52 @@ sectionFiches.appendChild(articleElement);
 //creerElement(article);
 
 pieces.map((article)=>creerElement(article));
+
+// sélection du bouton trier par prix croissants
+const boutonCroissant = document.querySelector(".croissant");
+const listeTriee = Array.from(pieces);
+boutonCroissant.addEventListener("click", () => {
+    listeTriee.sort(((a,b)=>{
+        return a.prix - b.prix;
+    }))
+    
+    document.querySelector(".fiches").innerHTML = " ";
+    listeTriee.map((article)=>creerElement(article))
+})
+// sélection du bouton prix nonabordable
+const boutonNonAbordable = document.querySelector(".nonabordable");
+boutonNonAbordable.addEventListener("click", ()=>{
+    const piecesInabordable = pieces.filter((piece)=>{
+        return piece.prix<=35;
+    });
+
+    document.querySelector(".fiches").innerHTML = " ";
+      piecesInabordable.map((article)=>creerElement(article))       
+})
+// sélection du bouton prix nonabordable
+const boutonDescription = document.querySelector(".avecdescription");
+boutonDescription.addEventListener("click", ()=>{
+    const piecesSansDescription = pieces.filter((piece)=>{
+        return piece.description ?? piece.description;
+    });
+    
+    document.querySelector(".fiches").innerHTML = " ";
+    piecesSansDescription.map((article)=>creerElement(article))
+})
+
+//listeTriee.map((article)=>creerElement(article));
+const btnDecroissant = document.querySelector(".decroissant");
+const cetteliste = Array.from(pieces);
+btnDecroissant.addEventListener("click", () => {
+    cetteliste .sort(((a,b)=>{
+        return a.prix - b.prix;
+    }))
+    //
+    const autreliste = Array.from(cetteliste);
+    let derniereliste = Array.from(autreliste);
+    let laderniereliste =(derniereliste.reverse() );
+
+    document.querySelector(".fiches").innerHTML = " ";
+    laderniereliste.map((article)=>creerElement(article))
+})
+
