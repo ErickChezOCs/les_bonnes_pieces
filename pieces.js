@@ -88,3 +88,11 @@ btnDecroissant.addEventListener("click", () => {
     laderniereliste.map((article)=>creerElement(article))
 })
 
+const inputPrixMax = document.querySelector('#prix-max');
+inputPrixMax.addEventListener('input',function(){
+    const piecesFiltrees = pieces.filter(function(piece){
+        return piece.prix <= inputPrixMax.value;
+    })
+    document.querySelector(".fiches").innerHTML = " ";
+    piecesFiltrees.map((article)=>creerElement(article))
+})
