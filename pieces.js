@@ -48,9 +48,38 @@ ajoutListenerAvis();
 
 };
 
+//creer elementliste
+
+function creerEleListe(listearticle){
+    const uneliste = document.createElement("ul");
+    uneliste.innerText = "Liste des produits";
+    for(let i=0;i<listearticle.length;i++){
+        const nomEle = document.createElement('li');
+        nomEle.innerText = listearticle[i];
+        uneliste.appendChild(nomEle);
+    }
+    const sectionListe = document.querySelector(".listeproduit");
+    sectionListe.appendChild(uneliste);      
+}
+
+    
+
+    
 //creerElement(article);
 
 pieces.map((article)=>creerElement(article));
+const nomPieces = [];
+for(let i=0;i<pieces.length;i++){
+        nomPieces.push(pieces[i].nom);
+}
+creerEleListe(nomPieces);
+
+ 
+
+
+
+
+
 
 // sélection du bouton trier par prix croissants
 const boutonCroissant = document.querySelector(".croissant");
