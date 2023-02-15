@@ -19,6 +19,11 @@ descriptionElement.innerText = article.description ?? 'Pas de description pour l
 const disponibiliteElement =  document.createElement('p');
 disponibiliteElement.innerText = article.disponibilité===true? 'En stock.' :"Rupture de stock";
 
+//ajout d'un bouton afficher les avis
+const btnAfficherAvis = document.createElement('button');
+btnAfficherAvis.classList.add("fiches article button");
+btnAfficherAvis.innerText ='Afficher les Avis';
+
 // sélection de l'élément parent
 const articleElement = document.createElement("article");
 articleElement.classList.add("article");
@@ -30,6 +35,7 @@ articleElement.appendChild(prixElement);
 articleElement.appendChild(categorieElement);
 articleElement.appendChild(descriptionElement);
 articleElement.appendChild(disponibiliteElement);
+articleElement.appendChild(btnAfficherAvis);
 
 const sectionFiches = document.querySelector(".fiches");
 sectionFiches.appendChild(articleElement);
