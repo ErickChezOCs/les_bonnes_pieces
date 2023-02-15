@@ -1,5 +1,9 @@
+import { ajoutListenerAvis } from "./avis.js";
+
+ 
+
 // récupération des pièces depuis le fichier json
-const reponse = await fetch('pieces-autos.json');
+const reponse = await fetch('http://localhost:8081/pieces');
 const pieces = await reponse.json();
 
 
@@ -21,9 +25,9 @@ disponibiliteElement.innerText = article.disponibilité===true? 'En stock.' :"Ru
 
 //ajout d'un bouton afficher les avis
 const btnAfficherAvis = document.createElement('button');
-btnAfficherAvis.classList.add("fiches article button");
-btnAfficherAvis.innerText ='Afficher les Avis';
-
+btnAfficherAvis.classList.add("fichesarticlebutton");
+btnAfficherAvis.textContent ='Afficher les Avis'; 
+btnAfficherAvis.dataset.id = article.id;
 // sélection de l'élément parent
 const articleElement = document.createElement("article");
 articleElement.classList.add("article");
@@ -39,7 +43,8 @@ articleElement.appendChild(btnAfficherAvis);
 
 const sectionFiches = document.querySelector(".fiches");
 sectionFiches.appendChild(articleElement);
-
+ 
+ajoutListenerAvis();
 };
 
 //creerElement(article);
