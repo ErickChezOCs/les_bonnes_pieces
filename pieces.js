@@ -28,6 +28,7 @@ const btnAfficherAvis = document.createElement('button');
 btnAfficherAvis.classList.add("fichesarticlebutton");
 btnAfficherAvis.textContent ='Afficher les Avis'; 
 btnAfficherAvis.dataset.id = article.id;
+
 // sélection de l'élément parent
 const articleElement = document.createElement("article");
 articleElement.classList.add("article");
@@ -43,8 +44,8 @@ articleElement.appendChild(btnAfficherAvis);
 
 const sectionFiches = document.querySelector(".fiches");
 sectionFiches.appendChild(articleElement);
- 
 ajoutListenerAvis();
+
 };
 
 //creerElement(article);
